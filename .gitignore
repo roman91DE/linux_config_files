@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# include files by name only
+!.vimrc
+!.bashrc
+!.gitconfig
+!.gitignore
+
+
+# Exclude directories 
+*/
