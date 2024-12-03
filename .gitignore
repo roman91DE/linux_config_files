@@ -6,7 +6,7 @@
 !.bashrc
 !.gitconfig
 !.gitignore
-
+!.tmux.conf
 
 # Exclude directories 
 */
