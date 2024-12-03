@@ -1342,4 +1342,4 @@ c = get_config()  #noqa
 
 # enable vi keybindings
 c.TerminalInteractiveShell.editing_mode = 'vi'
-''
+
