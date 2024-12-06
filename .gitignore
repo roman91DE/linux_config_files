@@ -4,6 +4,7 @@
 # include files by name only
 !.vimrc
 !.bashrc
+!.zshrc
 !.gitconfig
 !.gitignore
 !.tmux.conf
