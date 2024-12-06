@@ -52,3 +52,4 @@ fi
 # Set vi keybindings
 bindkey -v
 
+export IPYTHONDIR=~/.ipython
