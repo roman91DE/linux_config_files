@@ -16,10 +16,28 @@ HISTSIZE=1000
 SAVEHIST=2000
 
 
-# Set a fancy prompt with color
-if [[ "$TERM" == xterm-color || "$TERM" == *-256color ]]; then
-    color_prompt=yes
-fi
+# Prompt Design
+
+# Enable color definitions
+autoload -U colors && colors
+
+# Custom colors
+USER_COLOR="%F{cyan}"    # Cyan for your name
+DIR_COLOR="%F{blue}"     # Blue for the directory
+BRANCH_COLOR="%F{yellow}" # Yellow for Git branches
+SYMBOL_COLOR="%F{magenta}" # Magenta for the symbol
+RESET_COLOR="%f"         # Reset to default
+
+# Git branch function
+git_branch() {
+  # Get current branch name if in a Git repository
+  branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    [[ -n $branch ]] && echo "${BRANCH_COLOR}⎇ $branch${RESET_COLOR}"
+}
+
+# Custom prompt
+PROMPT="${USER_COLOR}Roman ${RESET_COLOR} %B${DIR_COLOR}%~%b $(git_branch) ${SYMBOL_COLOR}⚡${RESET_COLOR} "
+
 
 # Enable color support of ls and handy aliases
 if command -v dircolors &> /dev/null; then
@@ -40,16 +58,20 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-
-# Enable programmable completion features
-if [[ -f /usr/share/zsh/functions/Completion/zsh ]]; then
-    autoload -Uz compinit
-    compinit
-elif [[ -f /etc/zsh_completion ]]; then
-    source /etc/zsh_completion
+# use autocomplete if available
+if [[ -n "$HOMEBREW_PREFIX" && -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+    source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
+
 
 # Set vi keybindings
 bindkey -v
 
+# Environment Variables
+
+## User-specific IPython Directory
 export IPYTHONDIR=~/.ipython
+
+
+
+
