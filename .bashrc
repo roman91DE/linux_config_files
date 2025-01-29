@@ -126,3 +126,4 @@ elif [ -f /etc/bash_completion ]; then
 fi
 
 export IPYTHONDIR=~/.ipython
+. "$HOME/.cargo/env"
