@@ -72,6 +72,9 @@ bindkey -v
 ## User-specific IPython Directory
 export IPYTHONDIR=~/.ipython
 
+# control the openjdk java version on path
+# options include 11, 17
+JAVAVERSION="11"
 
-
-
+export PATH="/opt/homebrew/opt/openjdk@$JAVAVERSION/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@$JAVAVERSION"
