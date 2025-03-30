@@ -125,5 +125,9 @@ elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-export IPYTHONDIR=~/.ipython
-. "$HOME/.cargo/env"
+
+
+if [ -d "$HOME/.ghcup/bin" ]; then
+  export PATH="$HOME/.ghcup/bin:$PATH"
+fi
+
