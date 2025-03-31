@@ -10,4 +10,5 @@
 !.tmux.conf
 !.ipython/profile_default/ipython_config.py
 !.config/fish/config.fish
+!.config/nvim
 
