@@ -78,3 +78,9 @@ JAVAVERSION="11"
 
 export PATH="/opt/homebrew/opt/openjdk@$JAVAVERSION/bin:$PATH"
 export JAVA_HOME="/opt/homebrew/opt/openjdk@$JAVAVERSION"
+
+
+
+if [ -d "$HOME/.ghcup/bin" ]; then
+  export PATH="$HOME/.ghcup/bin:$PATH"
+fi
