@@ -1,0 +1,23 @@
+-- ~/.ghci
+
+-- Enable vim-style keybindings in interactive mode
+:set editor vim
+
+-- Change the GHCi prompt
+:set prompt "λ> "
+
+-- Show types after expressions (uncomment to enable)
+:set +t
+
+-- Show loaded modules
+:show modules
+
+-- Enable warnings (recommended for learning)
+:set -Wall
+
+-- Enable useful language extensions (uncomment what you need)
+-- :set -XOverloadedStrings
+-- :set -XRecordWildCards
+-- :set -XTupleSections
+-- :set -XLambdaCase
+
